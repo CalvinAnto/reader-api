@@ -77,9 +77,6 @@ func indexHandler(c *fiber.Ctx, db *sql.DB) error {
 		rows.Scan(&manga.ID, &manga.Title, &manga.Description, &manga.Cover, &manga.Thumbnail)
 		mangas = append(mangas, manga)
 	}
-	// return c.Render("index", fiber.Map{
-	// 	"Mangas": mangas,
-	// })
 
 	return c.JSON(mangas)
 }
